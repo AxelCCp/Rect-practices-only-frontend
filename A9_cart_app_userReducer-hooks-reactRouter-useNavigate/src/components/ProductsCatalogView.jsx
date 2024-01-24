@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { getProducts } from "../services/productService";
 
 
 export const ProductsCatalogView = ({handlerProduct}) => {
 
     const [products, setProducts] = useState([]);
+
+    const navigate = useNavigate();
 
     useEffect(
         () => { 
@@ -15,6 +18,7 @@ export const ProductsCatalogView = ({handlerProduct}) => {
     const addToMyCart = (product) => {
         console.log(product);
         handlerProduct(product);
+        navigate('/mycart');
     } 
 
     return (
