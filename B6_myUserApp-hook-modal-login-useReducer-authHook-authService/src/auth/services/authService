@@ -1,0 +1,8 @@
+export const loginUser = (userLogin) => {
+
+    //Return true o false, depending on whether the condition is met.
+    //This was decoupled because in practice this comes from the backend
+
+    return (userLogin.username === 'admin' && userLogin.password === '12345');
+
+}
